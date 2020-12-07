@@ -37,11 +37,7 @@ pipeline {
             }
         }
 
-        stage("01"){
-            failFast true
-            parallel {
-        
-                //构建
+        //构建
                 stage("Build"){
                     steps{
                         timeout(time:20, unit:"MINUTES"){
@@ -53,7 +49,7 @@ pipeline {
                         }
                     }
                 }
-        
+
                 //代码扫描
                 stage("CodeScan"){
                     steps{
@@ -65,8 +61,16 @@ pipeline {
                         }
                     }
                 }
-            }
-        }
+
+        // stage("01"){
+        //     failFast true
+        //     parallel {
+        
+                
+        
+                
+        //     }
+        // }
     }
 
     //构建后操作
