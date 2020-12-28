@@ -10,7 +10,7 @@ String buildShell = "${env.buildShell}" // 参数构建传入
 
 //Pipeline
 pipeline {
-    agent {node { label "main"}}
+    agent {node { label "any"}}
     
     stages {
         stage("build") {
